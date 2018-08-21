@@ -1,7 +1,7 @@
 var darkLayer = document.querySelector(".overlay"); // Не работаеть !!!11!
-var link = document.querySelector(".open-form");
-var popup = document.querySelector(".modal-form");
-var close = popup.querySelector(".modal-close");
+	link = document.querySelector(".open-form");
+	popup = document.querySelector(".modal-form");
+	close = popup.querySelector(".modal-close");
 
   
 link.addEventListener("click", function (evt) {
@@ -38,3 +38,17 @@ close.addEventListener("click", function (evt) {
 		scaledSize: new google.maps.Size(180, 140)
 	}
 });
+
+window.addEventListener("keydown", function (evt) {
+		if (evt.keyCode === 27) {
+		evt.preventDefault();
+		if (popup.classList.contains("modal-show")) {
+        popup.classList.remove("modal-show");
+        popup.classList.remove("modal-error");
+		}
+		}
+		});
+
+document.onclick = function() {
+  document.getElementById('modal-form').style.display = 'none'
+}
